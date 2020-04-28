@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Third party libraries CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <!-- Theming object -->
+    <script src="js/theme.js"></script>
+    <!-- Data object -->
+    <script src="js/data.js"></script>
+    <script>
+        (function($){
+            $(function(){
+                // Call data layer to grab data and theme using theming layer
+                $('form[name="pax"]').on('submit', function(e){
+                    e.preventDefault();
+                    let pax = $('input#pax').val();
+                    data.getCards(pax, theme.cards, theme.error);
+                });
+            })
+        })(jQuery);
+    </script>
+</head>
+<body class="container">
+    <div class="jumbotron">
+        <form name="pax">
+            <div class="form-group">
+                <label for="pax">No of Pax</label>
+                <input type="text" class="form-control" id="pax">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">OK</button>
+        </form>
+        <!-- Placeholder to hold retrieved data -->
+        <div id="cards"></div>
+    </div>
+</body>
+</html>
