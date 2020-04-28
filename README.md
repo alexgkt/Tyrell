@@ -1,5 +1,7 @@
 ## Poker Cards 
 #### Question 1
+Hours complete: 2.5
+
 Code divided to front end and backend. Backend is json based and frontend is SPA powered by Bootstrap 4 & Axios
 #### File structure
 ```
@@ -19,4 +21,6 @@ project
     │   Recomendation.md
 ```
 #### Question 2
+Hours Complete: 1 
+
 SQL query recomendation is within `SQL` folder `Recomendation.md`
